@@ -1,6 +1,6 @@
 package br.com.blockone;
 
-public class TheInvoiceItem {
+public class InvoiceItem {
 
 	private String id;
 
@@ -11,7 +11,7 @@ public class TheInvoiceItem {
 	private double unitPrice;
 	
 	
-	public TheInvoiceItem(String id, String desc, int qty, double unitPrice) {
+	public InvoiceItem(String id, String desc, int qty, double unitPrice) {
 		this.id = id;
 		this.desc = desc;
 		this.qty = qty;
