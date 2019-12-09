@@ -1,10 +1,10 @@
-package com.example.demo;
+package com.example.demo.employee;
 
 import java.util.List;
 
 public interface EmployeeService {
 	
-	Employee getEmployeeById(long id);
+	Employee getEmployeeById(Long id) throws Exception;
 	
 	List<Employee> getAllEmployees();
 

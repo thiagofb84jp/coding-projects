@@ -1,9 +1,14 @@
-package com.example.demo;
+package com.example.demo.employee;
+
+import java.text.DecimalFormat;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 @Entity
 public class Employee {
 
@@ -16,17 +21,20 @@ public class Employee {
 	private String lastName;
 
 	private boolean active;
+	
+	private double salary;
 
 	
 	public Employee() {
 		
 	}
-	
-	public Employee(String name, String lastName, boolean active) {
+		
+	public Employee(String name, String lastName, boolean active, double salary) {
 		super();
 		this.name = name;
 		this.lastName = lastName;
 		this.active = active;
+		this.salary = salary;
 	}
 
 	public Long getId() {
@@ -59,5 +67,23 @@ public class Employee {
 
 	public void setActive(boolean active) {
 		this.active = active;
+	}
+
+	public double getSalary() {
+		return salary;
+	}
+
+	public void setSalary(double salary) {
+		this.salary = salary;
+	}
+	
+	public static double genSalary() {
+		DecimalFormat decFormat = new DecimalFormat("#.##");
+
+		double value = Math.random() * ((5000 - 1000) + 1) + 1000;
+		
+		String result = decFormat.format(value).replace(",", ".");
+		
+		return Double.valueOf(result);
 	}
 }
