@@ -21,6 +21,7 @@ public class LoadDatabase{
 			employeeRepository.save(new Employee("Maria Lima da Silva", "Developer"));
 			
 			log.info("The sample data has been generated.");
+			log.info("My first Spring Boot project.");
 		};
 	}
 }
